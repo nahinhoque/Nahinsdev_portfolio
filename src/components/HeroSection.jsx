@@ -55,7 +55,7 @@ export const HeroSection = () => {
                                 </a>
 
                                 <a
-                                    href="/Resume/NahinsResumee.pdf"
+                                    href="/Resume/NahinIbnResumee (7).pdf"
                                     download
                                     className="group inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm font-medium text-white/90 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-violet-500/40 hover:bg-white/[0.08] hover:text-white"
                                 >

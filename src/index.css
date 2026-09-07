@@ -80,15 +80,15 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
+    --background: 222 47% 4%;
+    --foreground: 213 31% 91%;
 
-    --card: 0 0% 100%;
+    --card: 222 47% 8%;
 
-    --primary: 250 47% 60%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 250 65% 65%;
+    --primary-foreground: 213 31% 91%;
 
-    --border: 214 32% 91%;
+    --border: 217 33% 20%;
   }
 
   .dark {
@@ -162,8 +162,8 @@
 }
 
 @utility cosmic-button {
-  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)] hover:scale-105 active:scale-95;
-
+  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:scale-105 active:scale-95;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
 }
 
 @utility star {
@@ -183,8 +183,3 @@
   text-align: center;
 
 }
-
-
-
-
-

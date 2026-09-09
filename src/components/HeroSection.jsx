@@ -29,7 +29,7 @@ export const HeroSection = () => {
                                 <span className="block text-primary text-lg md:text-xl">C • JavaScript • Python • Exploring GenAI.</span>
                             </h2>
 
-                            {/* Bullet points instead of paragraphs */}
+                            {/* Bullet points instead of paragraphsd */}
                             <ul className="space-y-3 mb-6 text-sm md:text-base text-white/80">
                                 <li className="flex items-start gap-3">
                                     <span className="text-primary mt-1">•</span>
@@ -55,7 +55,7 @@ export const HeroSection = () => {
                                 </a>
 
                                 <a
-                                    href="/Resume/NahinIbnResumee (7).pdf"
+                                    href="/Resume/NahinsDEVResumee (7).pdf"
                                     download
                                     className="group inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm font-medium text-white/90 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-violet-500/40 hover:bg-white/[0.08] hover:text-white"
                                 >

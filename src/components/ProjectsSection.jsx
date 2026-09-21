@@ -50,9 +50,9 @@ export const ProjectsSection = () => {
                 <div className="text-center mb-20 space-y-4">
 
 
-                    <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-                        <span className="text-white">Featured </span>
-                        <span className="text-primary drop-shadow-[0_0_30px_rgba(168,85,247,0.4)]">
+                    <h2 className="text-[clamp(2.1rem,3.2vw,3.8rem)] font-black  leading-none">
+                        <span className="text-white pr-2">Featured </span>
+                        <span className="text-primary drop-shadow-[0_0_18px_rgba(247,199,103,0.2)]">
                             Projects
                         </span>
                     </h2>

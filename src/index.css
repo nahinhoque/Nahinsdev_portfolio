@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap');
 @import "tailwindcss";
 
 
@@ -80,27 +81,27 @@
 
 @layer base {
   :root {
-    --background: 222 47% 4%;
-    --foreground: 213 31% 91%;
+    --background: 216 42% 9%;
+    --foreground: 210 24% 96%;
 
-    --card: 222 47% 8%;
+    --card: 214 38% 12%;
 
-    --primary: 250 65% 65%;
-    --primary-foreground: 213 31% 91%;
+    --primary: 42 92% 62%;
+    --primary-foreground: 222 47% 7%;
 
-    --border: 217 33% 20%;
+    --border: 216 28% 18%;
   }
 
   .dark {
-    --background: 222 47% 4%;
-    --foreground: 213 31% 91%;
+    --background: 216 42% 9%;
+    --foreground: 210 24% 96%;
 
-    --card: 222 47% 8%;
+    --card: 214 38% 12%;
 
-    --primary: 250 65% 65%;
-    --primary-foreground: 213 31% 91%;
+    --primary: 42 92% 62%;
+    --primary-foreground: 222 47% 7%;
 
-    --border: 217 33% 20%;
+    --border: 216 28% 18%;
   }
 
   * {
@@ -113,7 +114,33 @@
 
   body {
     @apply bg-background text-foreground transition-colors duration-300;
+    font-family: "Inter", "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Space Grotesk", "Inter", sans-serif;
+    letter-spacing: -0.05em;
+    line-height: 1.05;
+    font-weight: 700;
+  }
+
+  p,
+  li,
+  a,
+  span,
+  button,
+  input,
+  textarea {
+    font-family: "Inter", "Segoe UI", sans-serif;
   }
 }
 

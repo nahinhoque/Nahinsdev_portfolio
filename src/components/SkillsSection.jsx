@@ -1,89 +1,85 @@
-import { useState } from "react";
-import { cn } from "../lib/utils";
+import {
+    Code2,
+    Database,
+    Globe,
+    LayoutDashboard,
+    ServerCog,
+    Smartphone,
+} from "lucide-react";
 
-const skills = [
-    // Frontend
-    { name: "HTML/CSS", category: "frontend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-    { name: "Tailwind CSS", category: "frontend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
-    { name: "JavaScript", category: "frontend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-    { name: "TypeScript", category: "frontend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-    { name: "React", category: "frontend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-
-    // Backend
-    { name: "Node.js", category: "backend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-    { name: "Express", category: "backend", logo: "https://cdn.simpleicons.org/express/ffffff" },
-    { name: "Socket.io", category: "backend", logo: "https://cdn.simpleicons.org/socket.io/ffdd00" },
-
-    // Database
-    { name: "MongoDB", category: "database", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-    { name: "MySQL", category: "database", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-    { name: "Redis", category: "database", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
-
-    // Tools
-    { name: "Git/Github", category: "tools", logo: "https://cdn.simpleicons.org/github/ffffff" },
-    { name: "Postman", category: "tools", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
-    { name: "Swagger", category: "tools", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg" },
-    { name: "SSLCommerz", category: "tools", logo: "https://cdn.simpleicons.org/shield/ffffff" },
-    { name: "Stripe", category: "tools", logo: "https://cdn.simpleicons.org/stripe/6666ee" },
-    { name: "VS Code", category: "tools", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
-    { name: "Google Colab", category: "tools", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" },
-    { name: "Vercel", category: "tools", logo: "https://cdn.simpleicons.org/vercel/ffffff" },
-    { name: "Render", category: "tools", logo: "https://cdn.simpleicons.org/render/46e3b7" },
+const services = [
+    {
+        title: "Frontend Development",
+        description:
+            "Crafting interactive, fast, and responsive user interfaces using React.js, Tailwind CSS, and Framer Motion.",
+        icon: LayoutDashboard,
+    },
+    {
+        title: "Backend Development",
+        description:
+            "Building scalable server-side applications, microservices, and secure authentication systems with Node.js & Express.",
+        icon: ServerCog,
+    },
+    {
+        title: "Database Design",
+        description:
+            "Designing efficient NoSQL database schemas, indexing strategies, and data modeling using MongoDB & Mongoose.",
+        icon: Database,
+    },
+    {
+        title: "MERN Stack Web Apps",
+        description:
+            "End-to-end full stack development connecting seamless React frontends to Node/Express backends and MongoDB.",
+        icon: Globe,
+    },
+    {
+        title: "RESTful API Integration",
+        description:
+            "Developing clean REST APIs, third-party service integrations, payment gateways, and real-time WebSockets.",
+        icon: Code2,
+    },
+    {
+        title: "Responsive Web Design",
+        description:
+            "Creating mobile-first, pixel-perfect designs optimized for speed, accessibility, and high conversion rates.",
+        icon: Smartphone,
+    },
 ];
 
-const categories = ["all", "frontend", "backend", "database", "tools"];
-
 export const SkillsSection = () => {
-    const [activeCategory, setActiveCategory] = useState("all");
-
-    const filteredSkills = skills.filter((skill) => activeCategory === "all" || skill.category === activeCategory);
-
     return (
-        <section id="skills" className="py-24 px-2 relative bg-secondary/30">
-            <div className="container mx-auto max-w-5xl">
-                <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">
-                    My <span className="text-primary">Skills</span>
-                </h2>
-
-                <div className="flex flex-wrap justify-center gap-4 mb-8">
-                    {categories.map((category) => (
-                        <button
-                            key={category}
-                            onClick={() => setActiveCategory(category)}
-                            className={cn("px-5 py-2 rounded-full transition-colors duration-300 capitalize",
-                                activeCategory === category ? "bg-primary text-primary-foreground" : "bg-secondary/70 text-foreground hover:bg-secondary"
-                            )}
-                        >
-                            {category}
-                        </button>
-                    ))}
+        <section id="skills" className="relative px-4 py-24 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-6xl">
+                <div className="mb-12 flex items-center justify-center gap-4">
+                    <span className="relative inline-flex h-4 w-4 items-center justify-center">
+                    </span>
+                    <h2 className="text-[clamp(2.1rem,3.2vw,3.6rem)] font-black leading-none">
+                        <span className="text-white pr-2">My </span>
+                        <span className="text-primary drop-shadow-[0_0_18px_rgba(247,199,103,0.2)]">Skills</span>
+                    </h2>
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-                    {filteredSkills.map((skill, index) => (
+                <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                    {services.map(({ title, description, icon: Icon }) => (
                         <div
-                            key={index}
-                            className="group relative flex flex-col items-center justify-center px-3 py-4 rounded-lg bg-gradient-to-br from-slate-900/40 to-slate-800/40 backdrop-blur-sm border border-slate-700/30 shadow-lg hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 hover:border-primary/50 hover:from-slate-900/60 hover:to-slate-800/60"
+                            key={title}
+                            className="group relative overflow-hidden rounded-[1.4rem] border border-white/8 bg-[linear-gradient(180deg,rgba(18,29,43,0.96),rgba(12,20,31,0.92))] p-6 shadow-[0_12px_28px_rgba(2,8,18,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 md:p-8"
                         >
-                            {/* Logo Container */}
-                            <div className="mb-2 h-8 w-8 flex items-center justify-center rounded-md bg-slate-800/50 group-hover:bg-primary/10 transition-all duration-300 p-0.5">
-                                <img
-                                    src={skill.logo}
-                                    alt={skill.name}
-                                    className="h-full w-full object-contain filter brightness-150 contrast-125 group-hover:drop-shadow-lg transition-all duration-300"
-                                    onError={(e) => {
-                                        e.target.style.display = "none";
-                                    }}
-                                />
+                            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(247,199,103,0.06),transparent_45%,rgba(59,130,246,0.08))]" />
+
+                            <div className="relative z-10">
+                                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-xl border border-primary/70 bg-[linear-gradient(180deg,rgba(247,199,103,0.14),rgba(247,199,103,0.04))] text-primary shadow-[inset_0_2px_0_rgba(255,255,255,0.08),0_8px_18px_rgba(0,0,0,0.18)]">
+                                    <Icon className="h-8 w-8" strokeWidth={1.8} />
+                                </div>
+
+                                <h3 className="mb-4 text-[clamp(1.5rem,1.8vw,2.2rem)] font-black leading-[1.12] tracking-[-0.06em] text-white">
+                                    {title}
+                                </h3>
+
+                                <p className="text-[1.02rem] leading-[1.7] text-slate-300 md:text-[1.15rem]">
+                                    {description}
+                                </p>
                             </div>
-
-                            {/* Skill Name */}
-                            <h3 className="font-semibold text-xs text-center text-foreground group-hover:text-primary transition-colors duration-300 line-clamp-2">
-                                {skill.name}
-                            </h3>
-
-                            {/* Hover Glow Effect */}
-                            <div className="absolute inset-0 rounded-lg bg-primary/0 group-hover:bg-primary/5 transition-all duration-300 pointer-events-none"></div>
                         </div>
                     ))}
                 </div>

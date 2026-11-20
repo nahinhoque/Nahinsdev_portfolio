@@ -13,72 +13,87 @@ const services = [
         description:
             "Crafting interactive, fast, and responsive user interfaces using React.js, Tailwind CSS, and Framer Motion.",
         icon: LayoutDashboard,
+        tools: ["React", "Tailwind CSS", "JavaScript"],
     },
     {
         title: "Backend Development",
         description:
             "Building scalable server-side applications, microservices, and secure authentication systems with Node.js & Express.",
         icon: ServerCog,
+        tools: ["Node.js", "Express", "JWT"],
     },
     {
         title: "Database Design",
         description:
             "Designing efficient NoSQL database schemas, indexing strategies, and data modeling using MongoDB & Mongoose.",
         icon: Database,
+        tools: ["MongoDB", "Mongoose", "Schema Design"],
     },
     {
         title: "MERN Stack Web Apps",
         description:
             "End-to-end full stack development connecting seamless React frontends to Node/Express backends and MongoDB.",
         icon: Globe,
+        tools: ["MERN", "REST APIs", "Deployment"],
     },
     {
         title: "RESTful API Integration",
         description:
             "Developing clean REST APIs, third-party service integrations, payment gateways, and real-time WebSockets.",
         icon: Code2,
+        tools: ["REST", "Socket.io", "Stripe"],
     },
     {
         title: "Responsive Web Design",
         description:
             "Creating mobile-first, pixel-perfect designs optimized for speed, accessibility, and high conversion rates.",
         icon: Smartphone,
+        tools: ["Mobile-First", "Accessibility", "UI Design"],
     },
 ];
 
 export const SkillsSection = () => {
     return (
-        <section id="skills" className="relative px-4 py-24 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-6xl">
-                <div className="mb-12 flex items-center justify-center gap-4">
-                    <span className="relative inline-flex h-4 w-4 items-center justify-center">
-                    </span>
-                    <h2 className="text-[clamp(2.1rem,3.2vw,3.6rem)] font-black leading-none">
+        <section id="skills" className="relative px-4 py-20 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-5xl">
+                <div className="mb-8 flex items-center justify-center">
+                    <h2 className="text-[clamp(2rem,3vw,3rem)] font-black leading-none">
                         <span className="text-white pr-2">My </span>
                         <span className="text-primary drop-shadow-[0_0_18px_rgba(247,199,103,0.2)]">Skills</span>
                     </h2>
                 </div>
 
-                <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                    {services.map(({ title, description, icon: Icon }) => (
+                <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                    {services.map(({ title, description, icon: Icon, tools }) => (
                         <div
                             key={title}
-                            className="group relative overflow-hidden rounded-[1.4rem] border border-white/8 bg-[linear-gradient(180deg,rgba(18,29,43,0.96),rgba(12,20,31,0.92))] p-6 shadow-[0_12px_28px_rgba(2,8,18,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 md:p-8"
+                            className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[linear-gradient(145deg,rgba(20,30,47,0.96),rgba(11,18,29,0.94))] p-5 shadow-[0_10px_24px_rgba(2,8,18,0.32)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/35"
                         >
-                            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(247,199,103,0.06),transparent_45%,rgba(59,130,246,0.08))]" />
+                            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                            <div className="relative z-10">
-                                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-xl border border-primary/70 bg-[linear-gradient(180deg,rgba(247,199,103,0.14),rgba(247,199,103,0.04))] text-primary shadow-[inset_0_2px_0_rgba(255,255,255,0.08),0_8px_18px_rgba(0,0,0,0.18)]">
-                                    <Icon className="h-8 w-8" strokeWidth={1.8} />
+                            <div className="relative z-10 flex flex-col">
+                                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-primary/45 bg-primary/[0.07] text-primary transition-all duration-300 group-hover:border-primary/70 group-hover:bg-primary/[0.12]">
+                                    <Icon className="h-5 w-5" strokeWidth={1.8} />
                                 </div>
 
-                                <h3 className="mb-4 text-[clamp(1.5rem,1.8vw,2.2rem)] font-black leading-[1.12] tracking-[-0.06em] text-white">
+                                <h3 className="mb-2.5 text-lg font-bold leading-tight tracking-[-0.02em] text-white">
                                     {title}
                                 </h3>
 
-                                <p className="text-[1.02rem] leading-[1.7] text-slate-300 md:text-[1.15rem]">
+                                <p className="min-h-[66px] text-sm leading-[1.65] text-slate-300/80">
                                     {description}
                                 </p>
+
+                                <div className="mt-4 flex flex-wrap gap-1.5 border-t border-white/[0.07] pt-3">
+                                    {tools.map((tool) => (
+                                        <span
+                                            key={tool}
+                                            className="rounded-md border border-white/[0.08] bg-white/[0.035] px-2 py-1 text-[10px] font-medium text-slate-300"
+                                        >
+                                            {tool}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     ))}

@@ -6,21 +6,34 @@ import { X } from "lucide-react";
 
 
 const navItems = [
-    { name: "Home", href: "#hero" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
-
+    { name: "Home", sectionId: "hero" },
+    { name: "Skills", sectionId: "skills" },
+    { name: "Projects", sectionId: "projects" },
+    { name: "Contact", sectionId: "contact" },
 ];
 
 export const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    const scrollToSection = (sectionId) => {
+        if (!sectionId) {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            return;
+        }
+
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+            return;
+        }
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.screenY > 10);
+            setIsScrolled(window.scrollY > 10);
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -31,7 +44,14 @@ export const Navbar = () => {
         )}>
 
             <div className="container flex items-center justify-between">
-                <a className="text-xl font-black tracking-[-0.04em] text-primary flex items-center" href="#hero">
+                <a
+                    className="text-xl font-black tracking-[-0.04em] text-primary flex items-center"
+                    href="/"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        scrollToSection("hero");
+                    }}
+                >
                     <span className="relative z-10">
                         <span className="text-glow text-foreground"> Nahin </span>
                     </span>
@@ -40,7 +60,15 @@ export const Navbar = () => {
                 {/* desktop nav */}
                 <div className="hidden md:flex space-x-8 font-semibold tracking-[-0.02em]">
                     {navItems.map((item, Key) => (
-                        <a key={Key} href={item.href} className="text-foreground/80 hover:text-primary transition-colors duration-300">
+                        <a
+                            key={Key}
+                            href="/"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSection(item.sectionId);
+                            }}
+                            className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                        >
                             {item.name}
                         </a>
                     ))}
@@ -62,8 +90,15 @@ export const Navbar = () => {
                 )}>
                     <div className="flex flex-col space-y-8 text-xl font-bold">
                         {navItems.map((item, Key) => (
-                            <a key={Key} href={item.href} className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                                onClick={() => setIsMenuOpen(false)}
+                            <a
+                                key={Key}
+                                href="/"
+                                className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    scrollToSection(item.sectionId);
+                                    setIsMenuOpen(false);
+                                }}
                             >
                                 {item.name}
                             </a>

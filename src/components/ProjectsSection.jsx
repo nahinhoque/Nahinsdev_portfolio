@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Sparkles, ArrowUpRight } from "lucide-react";
+import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 
 const projects = [
     {
@@ -38,45 +38,44 @@ const projects = [
 
 export const ProjectsSection = () => {
     return (
-        <section id="projects" className="relative py-32 px-4 overflow-hidden bg-gradient-to-b from-transparent via-black/40 to-transparent">
+        <section id="projects" className="relative py-20 px-4 overflow-hidden bg-gradient-to-b from-transparent via-black/20 to-transparent">
             {/* Ambient Background Glows */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/10 rounded-full blur-[120px]" />
                 <div className="absolute bottom-1/4 right-10 w-[400px] h-[400px] bg-violet-600/10 rounded-full blur-[100px]" />
             </div>
 
-            <div className="container mx-auto max-w-7xl relative z-10">
+            <div className="container mx-auto max-w-6xl relative z-10">
                 {/* Header */}
-                <div className="text-center mb-20 space-y-4">
+                <div className="text-center mb-10 space-y-3">
 
 
-                    <h2 className="text-[clamp(2.1rem,3.2vw,3.8rem)] font-black  leading-none">
+                    <h2 className="text-[clamp(2rem,3vw,3rem)] font-black leading-none">
                         <span className="text-white pr-2">Featured </span>
                         <span className="text-primary drop-shadow-[0_0_18px_rgba(247,199,103,0.2)]">
                             Projects
                         </span>
                     </h2>
 
-                    <p className="max-w-2xl mx-auto text-base md:text-lg text-white/60 font-light">
+                    <p className="max-w-2xl mx-auto text-sm md:text-base text-white/60">
                         Engineering production-ready applications with rigorous code architecture, high scalability, and refined visual aesthetics.
                     </p>
                 </div>
 
                 {/* Projects Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                     {projects.map((project, index) => (
                         <div key={index} className="group relative h-full">
-                            {/* Premium Sleek Border Glow */}
-                            <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-b from-primary/50 via-transparent to-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-sm" />
+                            <div className="absolute -inset-px rounded-[1.1rem] bg-gradient-to-b from-primary/35 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-sm" />
 
                             {/* Card Body */}
-                            <div className="relative h-full rounded-2xl border border-white/10 bg-[#0c0c14]/80 overflow-hidden backdrop-blur-xl transition-all duration-500 group-hover:-translate-y-1.5 group-hover:border-primary/50 flex flex-col shadow-xl group-hover:shadow-[0_20px_40px_rgba(168,85,247,0.15)]">
+                            <div className="relative h-full rounded-[1.1rem] border border-white/[0.08] bg-[#0c141f]/90 overflow-hidden backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-1 group-hover:border-primary/35 flex flex-col shadow-[0_12px_28px_rgba(2,8,18,0.32)]">
 
                                 {/* Image Preview Container */}
-                                <div className="relative h-56 overflow-hidden bg-slate-950 border-b border-white/10">
+                                <div className="relative h-44 overflow-hidden bg-slate-950 border-b border-white/[0.07]">
                                     {/* Status Badge */}
                                     <div className="absolute top-3 right-3 z-20">
-                                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-black/60 text-white backdrop-blur-md border border-white/15 shadow-md">
+                                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-black/65 text-white/90 backdrop-blur-md border border-white/15">
                                             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                                             {project.status}
                                         </span>
@@ -86,7 +85,7 @@ export const ProjectsSection = () => {
                                     <img
                                         src={project.image}
                                         alt={project.title}
-                                        className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                                        className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.035]"
                                     />
 
                                     {/* Subtle Gradient Veil */}
@@ -94,26 +93,26 @@ export const ProjectsSection = () => {
                                 </div>
 
                                 {/* Content Details */}
-                                <div className="p-6 flex flex-col flex-grow space-y-4">
+                                <div className="p-5 flex flex-col flex-grow text-left">
                                     <div className="space-y-2">
-                                        <span className="inline-block px-2.5 py-0.5 rounded-md text-[11px] font-medium uppercase tracking-wider bg-primary/10 border border-primary/20 text-primary">
+                                        <span className="inline-block px-2 py-0.5 rounded-md text-[9px] font-semibold uppercase tracking-[0.12em] bg-primary/[0.08] border border-primary/20 text-primary">
                                             {project.category}
                                         </span>
-                                        <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors duration-300">
+                                        <h3 className="text-lg font-bold leading-tight text-white group-hover:text-primary transition-colors duration-300">
                                             {project.title}
                                         </h3>
                                     </div>
 
-                                    <p className="text-sm text-white/60 leading-relaxed flex-grow">
+                                    <p className="mt-3 text-[13px] text-white/60 leading-[1.65] flex-grow">
                                         {project.description}
                                     </p>
 
                                     {/* Tags */}
-                                    <div className="flex flex-wrap gap-1.5 pt-2">
+                                    <div className="flex flex-wrap gap-1.5 mt-4 border-t border-white/[0.07] pt-3">
                                         {project.tags.map((tag) => (
                                             <span
                                                 key={tag}
-                                                className="px-2.5 py-1 rounded-md text-xs font-medium bg-white/[0.04] border border-white/10 text-white/70"
+                                                className="px-2 py-1 rounded-md text-[10px] font-medium bg-white/[0.035] border border-white/[0.08] text-white/65"
                                             >
                                                 {tag}
                                             </span>
@@ -121,12 +120,12 @@ export const ProjectsSection = () => {
                                     </div>
 
                                     {/* Action Links */}
-                                    <div className="flex gap-3 pt-4 border-t border-white/10 mt-auto">
+                                    <div className="flex gap-2 pt-4 mt-auto">
                                         <a
                                             href={project.demoUrl}
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-primary text-white font-medium text-xs tracking-wide transition-all duration-300 hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] active:scale-[0.98]"
+                                            className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg bg-primary text-[#171109] font-semibold text-xs transition-all duration-300 hover:bg-primary/90 active:scale-[0.98]"
                                         >
                                             <ExternalLink size={14} />
                                             Live Demo
@@ -135,7 +134,7 @@ export const ProjectsSection = () => {
                                             href={project.githubUrl}
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-white/15 bg-white/[0.02] text-white/90 font-medium text-xs tracking-wide hover:bg-white/[0.08] hover:border-primary/40 transition-all duration-300 active:scale-[0.98]"
+                                            className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg border border-white/[0.12] bg-white/[0.025] text-white/80 font-medium text-xs hover:bg-white/[0.07] hover:border-primary/35 transition-all duration-300 active:scale-[0.98]"
                                         >
                                             <Github size={14} />
                                             Source Code
@@ -148,12 +147,12 @@ export const ProjectsSection = () => {
                 </div>
 
                 {/* View More CTA */}
-                <div className="flex justify-center mt-5">
+                <div className="flex justify-center mt-8">
                     <a
                         href="https://github.com/nahinhoque"
                         target="_blank"
                         rel="noreferrer"
-                        className="group relative inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full border border-primary/40 bg-primary/10 text-white font-semibold text-sm backdrop-blur-md transition-all duration-300 hover:bg-primary hover:border-primary hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] active:scale-95"
+                        className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-full border border-primary/35 bg-primary/[0.08] text-white/90 font-semibold text-sm backdrop-blur-md transition-all duration-300 hover:bg-primary hover:text-[#171109] hover:border-primary active:scale-95"
                     >
                         <span>Explore All Projects</span>
                         <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
